@@ -42,7 +42,7 @@ function App() {
             ]
         }
     ]);
-
+    console.log(flightTables);
     const addNewFTRoute = (flightTableID: string, from: string, to: string) => {
         const newRoute = {id: v1(), from, to, isBooked: true};
         setFlightTables(prevState =>
