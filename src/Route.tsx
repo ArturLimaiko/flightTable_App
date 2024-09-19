@@ -11,7 +11,6 @@ type RouteProps = {
     updateFTRoutesFrom: (flightID: string, routeID: string, newFrom: string) => void;
     updateFTRoutesTo: (flightID: string, routeID: string, newTo: string) => void;
     removeFTRoute: (flightTableID: string, routeID: string) => void
-
 };
 
 export const Route = ({
@@ -20,10 +19,10 @@ export const Route = ({
                           flightTableID,
                           updateFTRoutesFrom,
                           updateFTRoutesTo,
-                          removeFTRoute
+                          removeFTRoute,
                       }: RouteProps) => {
     const handleRemoveFTRoute = () => {
-        alert('Почини меня, чтобы я могла удалять рейс. Сделай это через универсальную кнопку.')
+       removeFTRoute(flightTableID,route.id)
     };
 
     const handleUpdateRouteFrom = () => {
@@ -35,7 +34,7 @@ export const Route = ({
     }
 
     const handleToggleFTIsBooked = () => {
-        alert('Во мне куча ошибок!')
+
     }
 
     return (
@@ -44,7 +43,7 @@ export const Route = ({
                 <tbody>
                 <tr className={styles.ftRow}>
                     <td className={styles.ftCell}>
-                        <button onClick={handleRemoveFTRoute}>X</button>
+                        <Button title={'X'} onClick={handleRemoveFTRoute}/>
                     </td>
                     <td className={`${styles.ftCell} ${styles.pointerCursor}`}>
                         <UpdateItem oldTitle={route.from} callBack={() => 'handleUpdateRouteFrom'}/>
