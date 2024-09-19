@@ -6,7 +6,7 @@ import {RouteType} from "./FlightTable";
 
 type RouteProps = {
     route: RouteType
-    toggleFTIsBooked: (flightTableID: string, routeID: string) => void;
+    toggleFTIsBooked: (flightTableID: string, routeID: string,isBooked:boolean) => void;
     flightTableID: string;
     updateFTRoutesFrom: (flightID: string, routeID: string, newFrom: string) => void;
     updateFTRoutesTo: (flightID: string, routeID: string, newTo: string) => void;
@@ -33,8 +33,8 @@ export const Route = ({
         //updateFTRoutesTo();
     }
 
-    const handleToggleFTIsBooked = () => {
-
+    const handleToggleFTIsBooked = (isBooked:boolean) => {
+        toggleFTIsBooked(flightTableID,route.id,isBooked)
     }
 
     return (

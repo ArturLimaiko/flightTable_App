@@ -15,7 +15,7 @@ export type FlightProps = {
     date: string;
     flightTableID: string;
     routes: RouteType[];
-    toggleFTIsBooked: (flightID: string, routeID: string) => void;
+    toggleFTIsBooked: (flightID: string, routeID: string,isBooked:boolean) => void;
     removeFT: (flightID: string) => void;
     updateFTDate: (flightID: string, newDate: string) => void;
     updateFTRoutesFrom: (flightID: string, routeID: string, newFrom: string) => void;

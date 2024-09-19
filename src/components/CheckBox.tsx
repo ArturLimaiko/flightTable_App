@@ -4,6 +4,8 @@ type CheckBoxProps={
     isDone:boolean
     updateCheckBox:(isDone:boolean)=>void
 }
+
+ // передаем булево и саму 'жмякалку' updateCheckBox
 export const CheckBox = ({isDone,updateCheckBox}:CheckBoxProps) => {
     const onChangeHandler=(e:ChangeEvent<HTMLInputElement>)=>{
         updateCheckBox(e.currentTarget.checked)
