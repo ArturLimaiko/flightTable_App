@@ -24,5 +24,3 @@ export const UpdateItem = ({oldTitle, callBack}: UpdateRouteProps) => {
             : <span className={styles.hoverEffect} onDoubleClick={() => setEdit(true)}>{oldTitle}</span>
     );
 };
-
-
